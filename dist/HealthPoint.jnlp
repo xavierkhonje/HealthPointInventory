@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="HealthPoint.jnlp">
+  <information>
+    <title>HealthPoint</title>
+    <vendor>Afritrend</vendor>
+    <description>Inventory Management System</description>
+    <offline-allowed/>
+  <shortcut><desktop/></shortcut>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\HealthPointInventory-Preloader.jar" size="3191" download="progress" />
+    <jar href="HealthPointInventory.jar" size="2984371" download="eager" />
+    <jar href="lib\commons-beanutils-1.8.0.jar" size="231320" download="eager" />
+    <jar href="lib\commons-collections-3.2.1.jar" size="575389" download="eager" />
+    <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />
+    <jar href="lib\commons-javaflow-20060411.jar" size="96529" download="eager" />
+    <jar href="lib\commons-logging-1.1.1.jar" size="60841" download="eager" />
+    <jar href="lib\controlsfx-8.40.12.jar" size="996389" download="eager" />
+    <jar href="lib\groovy-all-2.0.1.jar" size="6191960" download="eager" />
+    <jar href="lib\iText-2.1.7.js2.jar" size="1130575" download="eager" />
+    <jar href="lib\itextpdf-5.4.1-sources.jar" size="1934883" download="eager" />
+    <jar href="lib\jasperreports-5.6.0.jar" size="4968538" download="eager" />
+    <jar href="lib\jasperreports-applet-5.6.0.jar" size="549866" download="eager" />
+    <jar href="lib\jasperreports-fonts-5.6.0.jar" size="2478084" download="eager" />
+    <jar href="lib\jasperreports-javaflow-5.6.0.jar" size="5011613" download="eager" />
+    <jar href="lib\jcommon-1.0.15.jar" size="309294" download="eager" />
+    <jar href="lib\jfreechart-1.0.12.jar" size="1368681" download="eager" />
+    <jar href="lib\log4j-1.2.17.jar" size="489883" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.18.jar" size="789885" download="eager" />
+    <jar href="lib\poi-3.7-20101029.jar" size="1675036" download="eager" />
+    <jar href="lib\sqljdbc42.jar" size="891084" download="eager" />
+    <jar href="lib\webcam-capture-0.3.10.jar" size="409084" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="HealthPoint" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="healthpointinventory.HealthPointInventory"  name="HealthPoint"  preloader-class="healthpointinventory.preloader.HealthPointInventory_Preloader"/>
+  <update check="always"/>
+</jnlp>

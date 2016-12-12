@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="MainStage" prefHeight="592.0" prefWidth="1083.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.afritrend.PharmacyController.ItemEntryController">
+    <stylesheets>
+        <URL value="@/Resources/patientmain.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="45.0" layoutY="53.0" styleClass="Interfacelabel" text="Code :" />
+      <Label layoutX="45.0" layoutY="25.0" styleClass="Interfacelabel" text="Class :" />
+      <Label layoutX="568.0" layoutY="23.0" styleClass="Interfacelabel" text="Name :" />
+      <Label layoutX="45.0" layoutY="81.0" styleClass="Interfacelabel" text="Issue Unit :" />
+      <Label layoutX="45.0" layoutY="109.0" styleClass="Interfacelabel" text="Price :" />
+      <Label layoutX="45.0" layoutY="131.0" styleClass="Interfacelabel" text="Description :" />
+      <Label layoutX="569.0" layoutY="77.0" styleClass="Interfacelabel" text="Dosage Form :" />
+      <Label layoutX="569.0" layoutY="108.0" styleClass="Interfacelabel" text="Strength :" />
+      <Label layoutX="569.0" layoutY="161.0" styleClass="Interfacelabel" text="Quantity :" />
+      <ComboBox fx:id="cbCode" layoutX="120.0" layoutY="47.0" onAction="#GetItemName" prefHeight="25.0" prefWidth="205.0" promptText="Select Code" styleClass="cbInterfaceComboCox" />
+      <ComboBox fx:id="cbClass" layoutX="120.0" layoutY="19.0" onAction="#GetItemCode" prefHeight="25.0" prefWidth="205.0" promptText="Select Class" styleClass="cbInterfaceComboCox" />
+      <ComboBox fx:id="cbName" editable="true" layoutX="652.0" layoutY="18.0" prefHeight="25.0" prefWidth="205.0" promptText="Select Item Name" styleClass="cbInterfaceComboCox" />
+      <TextField fx:id="txtIssueUnit" layoutX="120.0" layoutY="75.0" prefHeight="25.0" prefWidth="205.0" promptText="Issue Unit" styleClass="txtIntefaceTextField" />
+      <TextField fx:id="txtPrice" layoutX="120.0" layoutY="103.0" prefHeight="25.0" prefWidth="205.0" promptText="Price" styleClass="txtIntefaceTextField" />
+      <TextArea fx:id="txtDescription" layoutX="120.0" layoutY="132.0" prefHeight="105.0" prefWidth="205.0" promptText="Description" styleClass="txtInterfaceTextArea" />
+      <ComboBox fx:id="cbDosageForm" disable="true" layoutX="652.0" layoutY="74.0" prefHeight="25.0" prefWidth="205.0" promptText="Select Dosage Form" styleClass="cbInterfaceComboCox" />
+      <ComboBox fx:id="cbStrenghth" editable="true" layoutX="652.0" layoutY="102.0" prefHeight="25.0" prefWidth="205.0" promptText="Select Strength" styleClass="cbInterfaceComboCox" />
+      <TextField fx:id="txtQuantity" layoutX="652.0" layoutY="157.0" prefHeight="25.0" prefWidth="205.0" promptText="Quantity" styleClass="txtIntefaceTextField" />
+      <Button layoutX="45.0" layoutY="336.0" mnemonicParsing="false" onAction="#SaveItem" prefHeight="32.0" prefWidth="205.0" styleClass="btnInterfaceButton" text="Save Item" />
+      <Separator layoutY="332.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Separator layoutY="371.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <VBox layoutX="42.0" layoutY="330.0" prefHeight="214.0" prefWidth="857.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <TableView fx:id="TVitemEntry" prefHeight="216.0" prefWidth="857.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+      <Button layoutX="285.0" layoutY="336.0" mnemonicParsing="false" onAction="#UpdateItem" prefHeight="32.0" prefWidth="179.0" text="Update Item" />
+      <Button layoutX="487.0" layoutY="336.0" mnemonicParsing="false" onAction="#DeleteItem" prefHeight="32.0" prefWidth="161.0" text="Delete Item" />
+      <Label id="ItemStatus" fx:id="lblItemStatus" layoutX="678.0" layoutY="290.0" />
+      <CheckBox fx:id="chkIsDrug" layoutX="120.0" layoutY="246.0" mnemonicParsing="false" onAction="#IsDrug" text="Is Drug" />
+      <ComboBox fx:id="cbDrugClass" disable="true" layoutX="652.0" layoutY="46.0" prefHeight="25.0" prefWidth="205.0" promptText="Select Drug Class" />
+      <Label layoutX="568.0" layoutY="50.0" text="Drug Class" />
+      <DatePicker fx:id="dpexpirydate" layoutX="652.0" layoutY="130.0" prefHeight="25.0" prefWidth="205.0" promptText="Expiry Date" />
+      <Label layoutX="568.0" layoutY="136.0" text="Expiry Date:" />
+      <Label fx:id="lblClasserror" layoutX="339.0" layoutY="22.0" prefHeight="17.0" prefWidth="152.0" textFill="#e11414" />
+      <Label fx:id="lblCodeError" layoutX="339.0" layoutY="50.0" textFill="#e11414" />
+      <Label fx:id="lblIssueUnit" layoutX="339.0" layoutY="79.0" prefHeight="17.0" prefWidth="152.0" textFill="#e11414" />
+      <Label fx:id="lblPriceError" layoutX="339.0" layoutY="109.0" prefHeight="17.0" prefWidth="169.0" textFill="#e11414" />
+      <Label fx:id="lblDescriptionError" layoutX="339.0" layoutY="136.0" prefHeight="17.0" prefWidth="152.0" textFill="#e11414" />
+      <Label fx:id="lblItemNameError" layoutX="876.0" layoutY="23.0" prefHeight="17.0" prefWidth="152.0" textFill="#e11414" />
+      <Label fx:id="lblDrugClassName" layoutX="876.0" layoutY="53.0" prefHeight="17.0" prefWidth="161.0" textFill="#e11414" />
+      <Label fx:id="lblDosageFormError" layoutX="876.0" layoutY="81.0" prefHeight="17.0" prefWidth="136.0" textFill="#e11414" />
+      <Label fx:id="lblStrengthError" layoutX="876.0" layoutY="109.0" prefHeight="17.0" prefWidth="179.0" textFill="#e11414" />
+      <Label fx:id="lblExpiryDateError" layoutX="876.0" layoutY="136.0" prefHeight="17.0" prefWidth="136.0" textFill="#e11414" />
+      <Label fx:id="lblQuantityError" layoutX="876.0" layoutY="161.0" prefHeight="17.0" prefWidth="145.0" textFill="#e11414" />
+      <Label id="GeneralMessage" fx:id="lblGeneralMessage" layoutX="695.0" layoutY="342.0" textFill="#e10f0f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnFileChooser" layoutX="652.0" layoutY="193.0" mnemonicParsing="false" onAction="#AttachFiles" text="Attach Document" />
+      <Label layoutX="568.0" layoutY="197.0" text="Attach Docs :" />
+   </children>
+</AnchorPane>
